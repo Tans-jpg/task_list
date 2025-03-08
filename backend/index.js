@@ -43,3 +43,10 @@ app.get('/tasks', async (req, res) => {
 
 // Write an endpoint to create a new task.
 
+// Create a new task
+app.post('/api/tasks', async (req, res) => {
+    const { title, description } = req.body;
+    if (!title || !description) {
+        return res.status(400).json({ message: 'All fields are required' });
+    }
+})
